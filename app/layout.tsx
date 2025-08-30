@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
 import "./globals.css";
 import Narbar from "@/components/narbar";
+import Footer from "@/components/footer";
 
 const geisFiraCode = Fira_Code({
-  variable : "--font-fira-code",
+  variable: "--font-fira-code",
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
   title: "bdhamithkumara",
@@ -21,10 +22,20 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geisFiraCode.variable} antialiased min-h-screen bg-gradient-to-br from-[#010c15] via-[#011627] to-[#1e2d3d] text-[#e5e9f0] font-mono`}
+        className={`${geisFiraCode.variable} antialiased h-screen bg-gradient-to-br from-[#010c15] via-[#011627] to-[#1e2d3d] text-[#e5e9f0] font-mono p-2`}
       >
-        <Narbar/>
-        {children}
+        <div className="border-2 border-[#1e2d3d] h-full flex flex-col rounded-lg overflow-hidden">
+          {/* Navbar */}
+          <Narbar />
+
+          {/* Scrollable content */}
+          <main className="flex-1 overflow-y-auto p-4">
+            {children}
+          </main>
+
+          {/* Footer */}
+          <Footer />
+        </div>
       </body>
     </html>
   );
