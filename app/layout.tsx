@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geisFiraCode.variable} antialiased min-h-screen bg-gradient-to-br from-[#010c15] via-[#011627] to-[#1e2d3d] text-[#e5e9f0] font-mono `}
+        className={`${geisFiraCode.variable} antialiased min-h-screen bg-gradient-to-br from-[#010c15] via-[#011627] to-[#1e2d3d] text-[#e5e9f0] font-mono`}
       >
         <Narbar/>
         {children}
